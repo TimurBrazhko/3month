@@ -3,6 +3,8 @@ from config import bot
 import os
 from aiogram.types import InputFile
 import random
+from db import db_main
+
 
 
 # @dp.message_handler(commands=['start'])
@@ -11,6 +13,10 @@ async def start_handler(message: types.Message):
                            text='Privet dolbaeb')
 
     await message.answer(text='HEllO FAGOT')
+
+    print(message.from_user.id)
+    await db_main.sql_insert_registration(telegram_id=message.from_user.id,
+                                           firstname=message.from_user.first_name)
 
 
 async def info_handler(message: types.Message):
