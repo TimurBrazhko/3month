@@ -1,8 +1,6 @@
 from aiogram import types, Dispatcher
 from config import bot
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import os
-import random
 
 
 async def quiz(message: types.Message):
